@@ -1,0 +1,104 @@
+---
+title: "HSR Team – Weekly Research Updates"
+subtitle: "** Submit to via email by end of day each Monday **"
+output: 
+  word_document:
+    reference: reference.docx
+params:
+  name:
+    label: "Name:"
+    value: "Alex Watts"
+    input: text
+  start:
+    label: "Start Date:"
+    input: date
+    value: !r Sys.Date() - 7
+    max: !r Sys.Date() - 1
+  end:
+    label: "End Date:"
+    input: date
+    value: !r Sys.Date() - 1
+    max: !r Sys.Date()
+  date:
+    label: "**Date submitted:*"
+    input: date
+    value: !r Sys.Date()
+    max: !r Sys.Date + 5
+  project:
+    value: ""
+    input: select
+    multiple: TRUE
+    choices: ["Secret Shopper", "PE Demographics", "Biopsy Comparison", "Thesis"]
+  shop_prog:
+    label: "Progress on Secret Shopper"
+    value: "NA"
+    input: text
+  pe_prog: 
+    label: "Progress on PE Demographics"
+    value: "NA"
+    input: text
+  bx_prog:
+    label: "Progress on Biopsy Comparison"
+    value: "NA"
+    input: text
+  thesis_prog:
+    label: "Progress on Thesis"
+    value: "NA"
+    input: text
+  issues:
+    label: "**Data or project related issues encountered:**"
+    value: "NA"
+    input: text
+  questions: 
+    label: "**Questions requiring further discussion:**"
+    value: "NA"
+    input: text
+  steps:
+    label: "**Next steps and action items for next week:**"
+    value: "NA"
+    input: text
+  other:
+    label: "**Other issues or comments:**"
+    value: "NA"
+    input: text
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(blastula)
+```
+
+
+
+**From:** `r params$name`
+
+**Dates included:** `r params$start` - `r params$end`
+
+**Date submitted:** `r params$date`
+
+**Main projects or tasks worked on this week:** `r params$project`
+
+**Key progress or accomplishments:** 
+```{r, results = "asis", echo = FALSE}
+if("Secret Shopper" %in% params$project){
+    cat("\n - **Secret Shopper** \n    - ", params$shop_prog)
+}
+if("PE Demographics" %in% params$project){
+    cat("\n - **PE Demographics** \n    - ", params$pe_prog)
+}
+if("Biopsy Comparison" %in% params$project){
+    cat("\n - **Biopsy Comparison** \n    - ", params$bx_prog)
+}
+if("Thesis" %in% params$project){
+    cat("\n - **Thesis** \n    - ", params$thesis_prog)
+}
+```
+
+  
+**Data or project related issues encountered:** `r params$issues`
+
+**Questions requiring further discussion:** `r params$questions`
+    
+**Next steps and action items for next week:** `r params$steps`
+
+**Other issues or comments:** `r params$other`
