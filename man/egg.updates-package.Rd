@@ -4,12 +4,12 @@
 \name{egg.updates-package}
 \alias{egg.updates}
 \alias{egg.updates-package}
-\title{egg.updates: What the Package Does (One Line, Title Case)}
+\title{egg.updates: Create Updates for Pitt's EGG Group}
 \description{
-What the package does (one paragraph).
+Prompts user for input and automatically renders a word document in the style of weekly update templates for the EGG group at Pitt Urology.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Alex Watts \email{acwatts1995@gmail.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
 
 }
 \keyword{internal}

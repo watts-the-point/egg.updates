@@ -10,7 +10,8 @@
 create_EGG_update <- function(){
   filename <- paste0("~/Documents/EGG/Weekly_Updates/",Sys.Date(), "_Update.docx")
 
-  rmarkdown::render(
+  suppressWarnings(rmarkdown::render(
     "~/R_packages/egg.updates/inst/rmarkdown/templates/weekly-update/skeleton/skeleton.Rmd",
                   output_file = filename, params = "ask")
+  )
 }

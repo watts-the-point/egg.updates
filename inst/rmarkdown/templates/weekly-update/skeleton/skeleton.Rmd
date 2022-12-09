@@ -3,7 +3,7 @@ title: "HSR Team – Weekly Research Updates"
 subtitle: "** Submit to via email by end of day each Monday **"
 output: 
   word_document:
-    reference: reference.docx
+    reference_docx: reference.docx
 params:
   name:
     label: "Name:"
@@ -68,7 +68,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(blastula)
 ```
 
+ 
 
+::: {custom-style="Body-Update"}
 
 **From:** `r params$name`
 
@@ -102,3 +104,4 @@ if("Thesis" %in% params$project){
 **Next steps and action items for next week:** `r params$steps`
 
 **Other issues or comments:** `r params$other`
+:::
