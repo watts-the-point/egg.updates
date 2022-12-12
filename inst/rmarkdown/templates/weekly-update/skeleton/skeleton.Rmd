@@ -48,7 +48,7 @@ params:
   other_prog:
     label: "Progress on Other"
     value: "NA"
-    input: test
+    input: text
   issues:
     label: "**Data or project related issues encountered:**"
     value: "NA"
