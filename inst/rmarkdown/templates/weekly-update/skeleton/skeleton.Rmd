@@ -28,7 +28,7 @@ params:
     value: ""
     input: select
     multiple: TRUE
-    choices: ["Secret Shopper", "PE Demographics", "Biopsy Comparison", "Thesis"]
+    choices: ["Secret Shopper", "PE Demographics", "Biopsy Comparison", "Thesis", "Other"]
   shop_prog:
     label: "Progress on Secret Shopper"
     value: "NA"
@@ -45,6 +45,10 @@ params:
     label: "Progress on Thesis"
     value: "NA"
     input: text
+  other_prog:
+    label: "Progress on Other"
+    value: "NA"
+    input: test
   issues:
     label: "**Data or project related issues encountered:**"
     value: "NA"
@@ -93,6 +97,9 @@ if("Biopsy Comparison" %in% params$project){
 }
 if("Thesis" %in% params$project){
     cat("\n - **Thesis** \n    - ", params$thesis_prog)
+}
+if("Other" %in% params$project){
+    cat("\n - **Other** \n    - ", params$other_prog)
 }
 ```
 
